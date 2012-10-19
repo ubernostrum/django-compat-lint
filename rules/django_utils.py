@@ -86,7 +86,7 @@ def check_utils(line, filename, options):
                 'django.utils.%s does not exist in Django 1.4.' % module)
         if module in UTILS_STDLIB_MAP:
             info.append(
-                'Use %s in stdlib instead of %s.' % (
+                'Use %s in stdlib instead of django.utils.%s.' % (
                     UTILS_STDLIB_MAP[module], module))
         if module != 'datastructures' and 'SortedDict' not in line:
             warnings.append(
