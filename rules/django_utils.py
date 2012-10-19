@@ -77,7 +77,7 @@ def check_utils(line, filename, options):
     info = []
     module = None
     django_utils = DJANGO_UTILS_PATTERN.search(line)
-    if django_utils and 'import' in line:
+    if django_utils:
         module = django_utils.groupdict()['module']
         if module in SAFE_UTILS_MODULES:
             return warnings, errors, info
