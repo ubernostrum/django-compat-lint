@@ -76,8 +76,7 @@ def check_django_13(line, filename, options):
 
 
 rules = [
-    {'option': '-3',
-     'long_option': '--django-13',
+    {'long_option': '--django-13',
      'action': 'store_true',
      'dest': 'django_13',
      'help': 'Check for changes and deprecations in Django 1.3.',

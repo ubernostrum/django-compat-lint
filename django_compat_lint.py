@@ -56,7 +56,7 @@ if __name__ == '__main__':
                       help="Level of messages to display. 'errors', 'warnings', 'info' or 'all'. Default 'errors'.")
 
     for rule in RULES:
-        parser.add_option(rule['option'], rule['long_option'],
+        parser.add_option(rule['long_option'],
                           dest=rule['dest'], action=rule['action'],
                           help=rule['help'])
 

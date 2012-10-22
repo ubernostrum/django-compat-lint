@@ -77,11 +77,9 @@ same-named arguments to ``parser.add_option()`` in Python's
 ``optparse`` module (which implements the parsing of command-line
 flags):
 
-``option``
-    The (short) command-line flag for this rule.
-
 ``long_option``
-    The (long) command-line flag for this rule.
+    The (long) command-line flag for this rule. To avoid conflicts,
+    rules cannot use short flags.
 
 ``action``
     What action to take with the flag.

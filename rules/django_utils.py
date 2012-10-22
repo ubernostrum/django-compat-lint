@@ -95,8 +95,7 @@ def check_utils(line, filename, options):
 
 
 rules = [
-    {'option': '-u',
-     'long_option': '--utils',
+    {'long_option': '--utils',
      'action': 'store_true',
      'dest': 'utils',
      'help': 'Check for unsafe use of django.utils.',
