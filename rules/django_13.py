@@ -59,6 +59,13 @@ def check_compatcookie(line, filename, options):
     return warnings, [], []
 
 
+def check_redirect_next_param(line, filename, options):
+    warnings = []
+
+    if 'request.GET.get' in line and 'next' in line:
+        warnings.append("Potentially unsafe use of 'next' parameter from querystring.")
+    return warnings, [], []
+
 def check_django_13(line, filename, options):
     warnings = []
     info = []
