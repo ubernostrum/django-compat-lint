@@ -61,16 +61,27 @@ if __name__ == '__main__':
                           help=rule['help'])
 
     options, args = parser.parse_args()
-    if not args:
-        parser.error('At least one filename must be supplied.')
 
     enabled_rules = []
     for rule in RULES:
         if rule['enabled'](options):
             enabled_rules.append(rule['callback'])
+
+    files = []
+    if not args:
+        files += [path for path in os.listdir(os.getcwd()) if \
+                  (os.path.isfile(path) and '.pyc' not in f)]
+    else:
+        for path in args:
+            if os.path.isdir(os.path.abspath(path)):
+                subdir = os.path.abspath(path)
+                files += [os.path.join(subdir, f) for f in os.listdir(subdir) if \
+                          (os.path.isfile(os.path.join(subdir, f)) and '.pyc' not in f)]
+            else:
+                files.append(path)
     
     messages = []
-    for filename in args:
+    for filename in files:
         messages += check_file(filename, enabled_rules, options)
         
     for message in messages:

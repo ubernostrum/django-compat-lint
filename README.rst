@@ -37,6 +37,17 @@ The output will be a series of messages, on stdout, each specifying
 its level, the file it came from, the line of code it came from, and
 the problem or suggestion that was noticed.
 
+Two useful shortcuts are available for specifying files to check:
+
+* If no files are specified, all ``.py`` files in the current working
+  directory are checked.
+
+* A path to a directory can be specified; all ``.py`` files in that
+  directory will be checked.
+
+Recursive checking involving ``os.walk()`` is left as an exercise for
+someone to send a pull request for.
+
 
 How it works
 ------------
