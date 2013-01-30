@@ -2,7 +2,7 @@ def check_password_hasher(line, filename, options):
     warnings = []
     if 'PASSWORD_HASHERS' in line:
         warnings.append('Custom password hashers are now required to accept Unicode strings.')
-    return warnings, []. []
+    return warnings, [], []
 
 
 def check_simplejson(line, filename, options):
