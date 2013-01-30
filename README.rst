@@ -80,7 +80,7 @@ by a command-line flag; these levels should be used for:
 Registering rules
 -----------------
 
-Rules live in the ``rules/` subdirectory, and a set of rules is simply
+Rules live in the ``rules/`` subdirectory, and a set of rules is simply
 a Python module which exports a variable named ``rules``. This should
 be a list of dictionaries, one per rule. Each dictionary should have
 the following keys. The first five correspond exactly to the
