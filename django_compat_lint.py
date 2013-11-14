@@ -1,7 +1,13 @@
 from optparse import OptionParser
 import os
 
-from django.utils.importlib import import_module
+try:
+    from importlib import import_module
+except ImportError:
+    try:
+        from django.utils.importlib import import_module
+    except ImportError:
+        raise
 
 
 RULES = []

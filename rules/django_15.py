@@ -70,5 +70,5 @@ rules = [
      'dest': 'django_15',
      'help': 'Check for changes and deprecations in Django 1.5.',
      'callback': check_django_15,
-     'enabled': lambda options: options.django_14,}
+     'enabled': lambda options: options.django_15,}
 ]
