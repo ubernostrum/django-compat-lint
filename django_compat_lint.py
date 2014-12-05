@@ -76,7 +76,7 @@ if __name__ == '__main__':
     files = []
     if not args:
         files += [path for path in os.listdir(os.getcwd()) if \
-                  (os.path.isfile(path) and '.pyc' not in f)]
+                  (os.path.isfile(path) and '.pyc' not in path)]
     else:
         for path in args:
             if os.path.isdir(os.path.abspath(path)):
