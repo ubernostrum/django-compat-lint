@@ -223,7 +223,7 @@ def check_contenttypes(line, filename, options):
     for cls, new_location in moves:
         if cls in line:
             warnings.append("django.contrib.contenttypes.generic.%s is now located in "
-                            "django.contrib.contenttypes.%s" % cls, new_location)
+                            "django.contrib.contenttypes.%s" % (cls, new_location))
     return warnings, [], []
 
 
@@ -233,7 +233,7 @@ def check_utils_modules(line, filename, options):
                         'django.db.backends', 'django.forms')
     for mod in module_locations:
         if mod in line and 'util' in line and 'utils' not in line:
-            warnings.append("%s.util has been renamed to %s.utils" % mod)
+            warnings.append("%s.util has been renamed to %s.utils" % (mod, mod))
     return warnings, [], []
 
 
